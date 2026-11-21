@@ -1,2 +1,2 @@
 # homelab
-This is a kubernets homelab
+This is a kubernetes homelab
