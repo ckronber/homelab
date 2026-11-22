@@ -1,0 +1,26 @@
+services:
+  devcontainer:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    command: sleep infinity
+    volumes:
+      - ..:/workspaces/homelab
+
+  k3s:
+    image: rancher/k3s:v1.37.2-k3s1
+    command:
+      - server
+      - --write-kubeconfig=/workspaces/homelab/kubeconfig
+      - --write-kubeconfig-mode=0644
+      - --tls-san=k3s
+    privileged: true
+    tmpfs:
+      - /run
+      - /var/run
+    volumes:
+      - ..:/workspaces/homelab
+      - k3s-data:/var/lib/rancher/k3s
+
+volumes:
+  k3s-data:

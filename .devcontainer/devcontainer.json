@@ -1,0 +1,26 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+{
+  // Run k3s as a privileged sidecar while keeping the development container unprivileged.
+  "dockerComposeFile": "compose.yaml",
+  "service": "devcontainer",
+  "runServices": ["devcontainer", "k3s"],
+  "workspaceFolder": "/workspaces/homelab",
+  "features": {
+    "ghcr.io/jsburckhardt/devcontainer-features/flux:1": {}
+  },
+  "remoteEnv": {
+    "KUBECONFIG": "/workspaces/homelab/kubeconfig"
+  },
+  "postCreateCommand": "mkdir -p ~/.kube && chmod 700 ~/.kube",
+  "postStartCommand": "bash .devcontainer/configure-k3s.sh"
+
+// Use 'forwardPorts' to make a list of ports inside the container available locally.
+//"forwardPorts": [5500]
+//"appPorts": [5500, "5500:5500/tcp"]
+// Use 'postCreateCommand' to run commands after the container is created.
+// "postCreateCommand": "pip3 install --user -r requirements.txt",
+// Configure tool-specific properties.
+// "customizations": {},
+// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+// "remoteUser": "root"
+}
