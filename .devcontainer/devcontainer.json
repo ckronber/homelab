@@ -13,10 +13,10 @@
   },
   "postCreateCommand": "mkdir -p ~/.kube && chmod 700 ~/.kube",
   "postStartCommand": "bash .devcontainer/configure-k3s.sh",
-  //"appPort": ["0.0.0.0:5000:8080"]
+  "appPort": ["0.0.0.0:3000:8080"]
 
 // Use 'forwardPorts' to make a list of ports inside the container available locally.
-//"forwardPorts": [5500]
+//"forwardPorts": []
 //"appPorts": [5500, "5500:5500/tcp"]
 // Use 'postCreateCommand' to run commands after the container is created.
 // "postCreateCommand": "pip3 install --user -r requirements.txt",
