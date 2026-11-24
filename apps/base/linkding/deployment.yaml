@@ -19,9 +19,10 @@ spec:
             - containerPort: 9090
 
           volumeMounts:
-            - name: linkding-data-mount
+            - name: linkding-data
               mountPath: /etc/linkding/data
       volumes:
         - name: linkding-data
+          emptyDir: null
           persistentVolumeClaim:
             claimName: linkding-data-pvc
