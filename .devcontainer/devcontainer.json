@@ -13,6 +13,8 @@
   },
   "postCreateCommand": "mkdir -p ~/.kube && chmod 700 ~/.kube",
   "postStartCommand": "bash .devcontainer/configure-k3s.sh",
+  "postStartCommand": "git config --global user.email \"ckronber@gmail.com\"",
+  "postStartCommand": "git config --global user.name \"Chris Kronberg\"",
   //"appPort": ["0.0.0.0:3000:8080"]
 
 // Use 'forwardPorts' to make a list of ports inside the container available locally.
