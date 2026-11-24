@@ -20,7 +20,6 @@ spec:
 
           volumeMounts:
             - name: linkding-data
-              emptyDir: null
               mountPath: /etc/linkding/data
       volumes:
         - name: linkding-data
