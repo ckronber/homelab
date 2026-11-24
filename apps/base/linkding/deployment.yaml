@@ -22,8 +22,6 @@ spec:
             - name: linkding-data
               mountPath: /etc/linkding/data
       volumes:
-        - $patch: replace
         - name: linkding-data
-          emptyDir: null
           persistentVolumeClaim:
             claimName: linkding-data-pvc
